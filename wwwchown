@@ -1,0 +1,19 @@
+#!/bin/bash
+
+user="www-data"
+group="www-data"
+
+DIR_IMAGES=$1/images
+DIR_WP_UPLOADS=$1/wp-content/uploads
+DIR_DRUPAL_FILES=$1/sites/default/files
+
+DIR=$DIR_DRUPAL_FILES
+
+chown -R $user $1
+chgrp -R $group $1
+
+chmod -R 500 $1
+find $1 -type f -exec chmod -R 400 {} \; 
+
+chmod -R 700 "$DIR"
+find "$DIR" -type f -exec chmod -R 700 {} \; 
