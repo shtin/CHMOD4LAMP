@@ -1,11 +1,18 @@
 #!/bin/bash
 
+cd $1
+git pull
+cd ../
+
 user="www-data"
 group="www-data"
 
 DIR_IMAGES=$1/images
 DIR_WP_UPLOADS=$1/wp-content/uploads
 DIR_DRUPAL_FILES=$1/sites/default/files
+DIR_PHOTOS=$1/photos
+DIR_USERFILES=$1/userfiles
+DIR_CMSBS=$1/smarty/templates_c
 
 DIR=$DIR_DRUPAL_FILES
 
